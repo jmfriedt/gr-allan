@@ -2,6 +2,8 @@
 
 Assumes that https://pypi.org/project/AllanTools/ has been installed and is functional
 
+Tested with 3.10.5.1 (Python 3.11.1)
+
 ## Installation
 
 ```bash
@@ -23,3 +25,4 @@ simplified) examples.
 * Check whether the calculation is correct
 * Add axis and labels
 * Add error bars
+* Add colored noise generation
