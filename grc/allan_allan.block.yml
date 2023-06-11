@@ -4,7 +4,7 @@ category: '[Allan Tools]'
 
 templates:
   imports: from gnuradio import allan
-  make: allan.allan(${allan_type},${allan_inc},${textdisplay})
+  make: allan.allan(${allan_type},${input_type},${allan_inc},${textdisplay})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -19,6 +19,12 @@ parameters:
   options: ['0', '1', '2']
   option_labels: ["TDEV","OHDEV","OADEV"]
   default: '2'
+- id: input_type
+  label: 'Input Type'
+  dtype: enum
+  options: ['False', 'True']
+  option_labels: ["Freq","Phase"]
+  default: False
 - id: allan_inc
   label: 'Allan Update rate'
   dtype: int

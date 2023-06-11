@@ -51,14 +51,15 @@ blocks:
     affinity: ''
     alias: ''
     allan_inc: '1000'
-    allan_type: '2'
+    allan_type: '0'
     comment: ''
+    input_type: 'False'
     textdisplay: 'True'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [664, 128.0]
+    coordinate: [664, 120.0]
     rotation: 0
     state: true
 - name: analog_noise_source_x_0
@@ -87,7 +88,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /home/jmfriedt/sdr/gr-allan/examples/t
+    file: t
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -142,7 +143,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [232, 92.0]
+    coordinate: [232, 60.0]
     rotation: 0
     state: disabled
 
