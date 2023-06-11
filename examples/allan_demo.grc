@@ -51,13 +51,14 @@ blocks:
     affinity: ''
     alias: ''
     allan_inc: '1000'
-    allan_type: '0'
+    allan_type: '2'
     comment: ''
+    textdisplay: 'True'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [664, 136.0]
+    coordinate: [664, 128.0]
     rotation: 0
     state: true
 - name: analog_noise_source_x_0
@@ -77,6 +78,28 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [16, 128.0]
+    rotation: 0
+    state: disabled
+- name: blocks_file_source_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.PMT_NIL
+    comment: ''
+    file: /home/jmfriedt/sdr/gr-allan/examples/t
+    length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    repeat: 'False'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 216.0]
     rotation: 0
     state: true
 - name: blocks_throttle_0
@@ -121,94 +144,13 @@ blocks:
     bus_structure: null
     coordinate: [232, 92.0]
     rotation: 0
-    state: enabled
-- name: qtgui_freq_sink_x_0
-  id: qtgui_freq_sink_x
-  parameters:
-    affinity: ''
-    alias: ''
-    alpha1: '1.0'
-    alpha10: '1.0'
-    alpha2: '1.0'
-    alpha3: '1.0'
-    alpha4: '1.0'
-    alpha5: '1.0'
-    alpha6: '1.0'
-    alpha7: '1.0'
-    alpha8: '1.0'
-    alpha9: '1.0'
-    autoscale: 'False'
-    average: '1.0'
-    axislabels: 'True'
-    bw: samp_rate
-    color1: '"blue"'
-    color10: '"dark blue"'
-    color2: '"red"'
-    color3: '"green"'
-    color4: '"black"'
-    color5: '"cyan"'
-    color6: '"magenta"'
-    color7: '"yellow"'
-    color8: '"dark red"'
-    color9: '"dark green"'
-    comment: ''
-    ctrlpanel: 'False'
-    fc: '0'
-    fftsize: '1024'
-    freqhalf: 'True'
-    grid: 'False'
-    gui_hint: ''
-    label: Relative Gain
-    label1: ''
-    label10: ''''''
-    label2: ''''''
-    label3: ''''''
-    label4: ''''''
-    label5: ''''''
-    label6: ''''''
-    label7: ''''''
-    label8: ''''''
-    label9: ''''''
-    legend: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    name: '""'
-    nconnections: '1'
-    norm_window: 'False'
-    showports: 'False'
-    tr_chan: '0'
-    tr_level: '0.0'
-    tr_mode: qtgui.TRIG_MODE_FREE
-    tr_tag: '""'
-    type: float
-    units: dB
-    update_time: '0.10'
-    width1: '1'
-    width10: '1'
-    width2: '1'
-    width3: '1'
-    width4: '1'
-    width5: '1'
-    width6: '1'
-    width7: '1'
-    width8: '1'
-    width9: '1'
-    wintype: window.WIN_BLACKMAN_hARRIS
-    ymax: '10'
-    ymin: '-140'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [640, 48.0]
-    rotation: 0
-    state: true
+    state: disabled
 
 connections:
 - [analog_noise_source_x_0, '0', low_pass_filter_0, '0']
+- [blocks_file_source_0, '0', blocks_throttle_0, '0']
 - [blocks_throttle_0, '0', allan_allan_0, '0']
 - [low_pass_filter_0, '0', blocks_throttle_0, '0']
-- [low_pass_filter_0, '0', qtgui_freq_sink_x_0, '0']
 
 metadata:
   file_format: 1

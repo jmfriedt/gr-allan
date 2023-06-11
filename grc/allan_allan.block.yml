@@ -4,7 +4,7 @@ category: '[Allan Tools]'
 
 templates:
   imports: from gnuradio import allan
-  make: allan.allan(${allan_type},${allan_inc})
+  make: allan.allan(${allan_type},${allan_inc},${textdisplay})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -16,16 +16,19 @@ parameters:
 - id: allan_type
   label: 'Allan Type'
   dtype: enum
-  options: [0, 1, 2]
+  options: ['0', '1', '2']
   option_labels: ["TDEV","OHDEV","OADEV"]
-  default: 0
+  default: '2'
 - id: allan_inc
   label: 'Allan Update rate'
   dtype: int
   default: 1000
-#- id: ...
-#  label: ...
-#  dtype: ...
+- id: textdisplay
+  label: 'Text display'
+  dtype: enum
+  options: ['False', 'True']
+  option_labels: ["False","True"]
+  default: False
 
 #  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
 #  Keys include:
@@ -39,6 +42,12 @@ inputs:
   domain: stream
   dtype: float
   vlen: 1
+
+documentation: |-
+    Real time Allan deviation calculation. Allan mode depends on the Allan Type flag:
+         TDEV: Time deviation
+         OHDEV: Overlapping Hadamard deviation
+         OADEV: Overlapping Allan deviation
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.
