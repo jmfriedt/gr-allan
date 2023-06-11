@@ -5,7 +5,7 @@ cat noisetest.ykt  | grep -v ^% | cut -c29-51 | tr "\n" " " | ascii2binary -tf >
 
 <img src="allan_demo.png">
 
-SigmaTheta:
+SigmaTheta (https://sourcesup.renater.fr/www/sigmatheta/):
 ```bash
 SigmaTheta/st_HDev  noisetest.ykt
 1.0000e+01           9.7192338891476231e-14
@@ -26,7 +26,7 @@ SigmaTheta/st_HDev  noisetest.ykt
 2.1845e+05           3.8438523879653863e-13
 ```
 
-SigmaTheta:
+SigmaTheta (https://sourcesup.renater.fr/www/sigmatheta/):
 ```bash
 st_ADev < noisetest.ykt
 1.000e+01 1.20e-13
