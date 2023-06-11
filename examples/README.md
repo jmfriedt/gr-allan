@@ -109,3 +109,7 @@ Comparison of SigmaTheta with this implementation. BE CAREFUL to set the dataset
 (and not the default behaviour of phase)
 
 <img src="comparison.png">
+
+Graphical and text output:
+
+<img src="2023-06-11-205500_1024x768_scrot.png">
