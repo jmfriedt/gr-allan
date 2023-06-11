@@ -47,6 +47,7 @@ st_ADev < noisetest.ykt
 3.277e+05 1.94e-12
 ```
 
+gr-allan (AllanTools):
 ```bash
 OHDEV:
 1.0000e+00 1.18996682e-13
@@ -69,6 +70,7 @@ OHDEV:
 1.7783e+04 3.20856472e-13 
 ```
 
+gr-allan (AllanTools):
 ```bash
 TDEV:
 [1.0000e+00 2.0000e+00 3.0000e+00 6.0000e+00 1.0000e+01 1.8000e+01
@@ -82,6 +84,7 @@ TDEV:
  3.86390202e-09 1.21299483e-08 0.00000000e+00]
 ```
 
+gr-allan (AllanTools):
 ```bash
 OADEV:
 1.0000e+00 1.19732200e-13 
