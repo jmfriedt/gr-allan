@@ -35,15 +35,19 @@ class AllanAff(QWidget):
         else:
             plottaus=self.taus
             plotdevs=self.devs
-        if (len(plottaus)>0):
+        if (len(plottaus)>1):
             tausmax=numpy.log10(max(plottaus))
             devsmax=numpy.log10(max(plotdevs))
             devsmin=numpy.log10(min(plotdevs))
             path = QPainterPath()
-            for n in range(len(plottaus)):
-                path.lineTo(numpy.log10(plottaus[n])/tausmax*self.width(), (numpy.log10(plotdevs[n])-devsmin)/(devsmax-devsmin)*self.height())
+            path.moveTo(numpy.log10(plottaus[0])/tausmax*self.width(), self.height()-(numpy.log10(plotdevs[0])-devsmin)/(devsmax-devsmin)*self.height())
+            for n in range(len(plottaus[1:-1])): # starts counting at 0
+               path.lineTo(numpy.log10(plottaus[n+1])/tausmax*self.width(), self.height()-(numpy.log10(plotdevs[n+1])-devsmin)/(devsmax-devsmin)*self.height())
             painter.drawPath(path)
-
+            painter.drawText(5, 15, str(max(plotdevs)))
+            painter.drawText(5, self.height()-5, str(min(plotdevs)))
+            painter.drawText(self.width()-75, self.height()-5, str(max(plottaus))) 
+            
     def setValue(self, taus,devs):
 #        print("New QWidget value")
         self.taus=taus
@@ -72,7 +76,6 @@ class allan(gr.sync_block, AllanAff): # Display):
             self.dev_rt = at.realtime.ohdev_realtime(tau0=1.0,auto_afs=True)
         if allan_type==2:
             self.dev_rt = at.realtime.oadev_realtime(tau0=1.0,auto_afs=True)
-        self.single=True   # update a single trace (True) or accumulate traces (False)
 #### graphics part   
         self.affichage=AllanAff.__init__(self,parent)
 
