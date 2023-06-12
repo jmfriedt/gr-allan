@@ -22,7 +22,5 @@ simplified) examples.
 
 ## TODO
 
-* Check whether the calculation is correct
-* Add axis and labels
 * Add error bars
 * Add colored noise generation
