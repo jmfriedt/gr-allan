@@ -20,7 +20,12 @@ The two technical challenges met in this demonstration are:
 * real time plotting of the result, inspired from ``gr-pyqt`` but heavily edited (and
 simplified) examples.
 
+Graphical and text output:
+
+<img src="examples/2023-06-11-205500_1024x768_scrot.png">
+
 ## TODO
 
 * Add error bars
 * Add colored noise generation
+
