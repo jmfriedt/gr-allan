@@ -153,7 +153,7 @@ Comparison of SigmaTheta with this implementation. BE CAREFUL to set the dataset
 
 <img src="comparison.png">
 
-Stable32 Hadamard:
+Stable32 (http://www.stable32.com/) Hadamard:
 ```bash
 1.000e+00   65534   1.190e-13
 2.000e+00   32766   8.621e-14
@@ -171,7 +171,7 @@ Stable32 Hadamard:
 8.192e+03       6   1.619e-13
 ```
 
-Stable32 Overlapping Allan:
+Stable32 (http://www.stable32.com/) Overlapping Allan:
 ```bash
 1.000e+00   65535   1.198e-13
 2.000e+00   65533   8.829e-14
